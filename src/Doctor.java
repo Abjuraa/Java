@@ -5,23 +5,16 @@ public class Doctor {
     String speciality;
 
     Doctor() {
-        System.out.println("Se esta construyendo el objeto Doctor");
-        id++;
     }
 
     Doctor(String name, String speciality) {
-        this.name = name;
-        this.speciality = speciality;
+        setName(name);
+        setSpeciality(speciality);
+        id++;
         this.showName();
-    }
-
-    //Setters
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setSpeciality() {
-        this.speciality = speciality;
+        this.showSpeciality();
+        this.showId();
+        System.out.println("-------------------------");
     }
 
     //Getters
@@ -35,6 +28,15 @@ public class Doctor {
 
     public int getId() {
         return id;
+    }
+
+    //Setters
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSpeciality(String speciality) {
+        this.speciality = speciality;
     }
 
 
@@ -55,6 +57,8 @@ public class Doctor {
 
     @Override
     public String toString() {
-        return new StringBuilder().append("El doctor es ").append(this.name).append("y se especializa en ").append(this.speciality).toString();
+        return new StringBuilder().append("El doctor es ").append(this.name).append(" y se especializa en ").append(this.speciality).toString();
     }
+
+
 }
